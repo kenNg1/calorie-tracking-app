@@ -2,10 +2,10 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent }   from './app.component';
-// import { DisplayComponent } from './display.component';
-// import { NewComponent } from './new.component';
-// import { EditComponent } from './edit.component';
-// import { FilterPipe } from './filter.pipe';
+import { DisplayComponent} from './display.component';
+import { NewComponent} from './new.component';
+import { EditComponent} from './edit.component';
+import { FilterPipe} from './filter.pipe';
 
 @NgModule({
   imports: [
@@ -14,10 +14,10 @@ import { AppComponent }   from './app.component';
   ],
   declarations: [
     AppComponent,
-    // DisplayComponent
-    // NewComponent,
-    // EditComponent,
-    // FilterPipe
+    DisplayComponent,
+    NewComponent,
+    EditComponent,
+    FilterPipe
   ],
   bootstrap:    [ AppComponent ]
 })

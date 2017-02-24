@@ -1,0 +1,41 @@
+body {
+  background: url(https://s3.amazonaws.com/codecademy-content/projects/2/listeasy/bg.png);
+  background-size: 350px 450px;
+  font-family: 'Arvo', serif;
+  margin: 0;
+  color: black;
+  font-family: "Verdana"
+}
+
+.container {
+  margin-top: 5px;
+}
+
+.meal {
+  background-color: rgba(255,255,255,0.95);
+  color: #0093D7 ;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 2px;
+  width: 300px;
+  height: 100px;
+  display: inline-block;
+}
+
+.header {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 2px rgba(0,0,0,.15);
+  height: auto;
+  color: #0093D7;
+  text-align: center;
+}
+
+#finishedeating {
+  border-radius: 33px;
+  height: 50px;
+  text-align: center;
+}
+
+input{
+  font-style: italic;
+}
