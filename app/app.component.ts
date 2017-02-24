@@ -5,16 +5,9 @@ import { Meal } from './meal.model';
     selector: `my-app`,
     template: `
       <div class="container-fluid header"><h1 id="title">Calorie Tracking App</h1></div>
-      <button (click)="onEdit()">Edit</button>
-      <button (click)="onSave()">Save</button>
-      <select (change)="onChange($event.target.value)">
-          <option value='all'>All</option>
-          <option value='high'>Only High Calories</option>
-          <option value='low'>Only Low Calories</option>
-      </select>
       <new-component (onCreateSender)="createNewMeal($event)"></new-component>
-      <display-component [childMealList]="masterMealList" [childSelectedState]="selectedState" *ngIf="!editForm"></display-component>
-      <edit-component [childMealList]="masterMealList" *ngIf="editForm"></edit-component>
+      <display-component [childMealList]="masterMealList" [childSelectedState]="selectedState" *ngIf="!editForm" (editClickedSender)="editActivated($event)"></display-component>
+      <edit-component [childMealList]="masterMealList" *ngIf="editForm" (saveClickedSender)="saveActivated($event)"></edit-component>
       `
 })
 
@@ -30,11 +23,11 @@ export class AppComponent {
     }
 
     editForm: boolean = false;
-    onEdit(){
-      this.editForm = true;
+    editActivated(){
+        this.editForm = true;
     }
 
-    onSave(){
+    saveActivated(){
       this.editForm = false;
     }
 
