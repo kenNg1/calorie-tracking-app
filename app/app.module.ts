@@ -6,6 +6,7 @@ import { DisplayComponent} from './display.component';
 import { NewComponent} from './new.component';
 import { EditComponent} from './edit.component';
 import { FilterPipe} from './filter.pipe';
+import { TotalComponent } from './total.component'
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { FilterPipe} from './filter.pipe';
     DisplayComponent,
     NewComponent,
     EditComponent,
-    FilterPipe
+    FilterPipe,
+    TotalComponent
   ],
   bootstrap:    [ AppComponent ]
 })

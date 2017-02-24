@@ -15,7 +15,7 @@ import { FilterPipe } from './filter.pipe'
       <div (click)=editClicked()>
       <h5>Name:{{ currentMeal.name }}</h5>
       <h5>Details: {{ currentMeal.details }}</h5>
-      <h4>Calories: {{ currentMeal.calories }}</h4>
+      <!---<h4>Calories: {{ currentMeal.calories }}</h4>-->
       </div>
     </div>
   </div>
@@ -25,8 +25,25 @@ import { FilterPipe } from './filter.pipe'
 export class DisplayComponent {
   @Input() childMealList: Meal[];
   @Input() childSelectedState: string;
+  // public totalCalories: number = 0;
+  //
+  // totalMethod(){
+  //   console.log("thisisworking");
+  //   this.totalCalories=0;
+  //   for(var i=0; i<this.childMealList.length;i++){
+  //     this.totalCalories = this.totalCalories + this.childMealList[i].calories;
+  //     return this.totalCalories;
+  //   }
+  // }
+
   @Output() editClickedSender = new EventEmitter;
   editClicked() {
     this.editClickedSender.emit();
   }
+
+  onChange (optionFromMenu){
+    this.childSelectedState = optionFromMenu;
+    console.log(this.childSelectedState);
+  }
+
 }
