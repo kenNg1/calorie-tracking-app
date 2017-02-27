@@ -14,9 +14,9 @@ import { Meal } from './meal.model';
 
 export class AppComponent {
     masterMealList: Meal[] = [
-      new Meal("Beef Noodles","Loads of delicious fatty beef",550),
-      new Meal("Won Ton Noodles","Small portion only ate 3/4 bowl", 450),
-      new Meal("Salad","Freshly made myself", 200)
+      new Meal("Beef Noodles","Loads of delicious fatty beef",550,"24/2"),
+      new Meal("Won Ton Noodles","Small portion only ate 3/4 bowl",450,"24/2"),
+      new Meal("Salad","Freshly made myself", 200,"24/2")
     ]
 
     createNewMeal (newMeal: Meal) {

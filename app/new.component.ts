@@ -5,12 +5,13 @@ import {Meal} from './meal.model';
   selector: 'new-component',
   template: `
   <div class="container">
-    <h3><b> New Meal </b></h3>
-    <input type="text" placeholder="Name" #newName />
+    <label for="Name">New Meal</label>
+    <input id="Name" type="text" placeholder="Name" #newName />
     <input type="text" placeholder="Details" #newDetails />
     <input type="number" placeholder="Calories" #newCalories />
-    <input value={{getIt()}}/>
-    <button class="btn" id="finishedeating"  (click)="onCreate(newName.value,newDetails.value,newCalories.value); newName.value='';newDetails.value='';
+    <label for="date">Date (DD/M)</label>
+    <input id="date" value={{getIt()}} #newDate/>
+    <button class="btn" id="finishedeating"  (click)="onCreate(newName.value,newDetails.value,newCalories.value,newDate.value); newName.value='';newDetails.value='';
     newCalories.value='';">Burp</button>
   </div>
   `
@@ -26,8 +27,8 @@ getIt(){
 }
 
     @Output() onCreateSender = new EventEmitter();
-    onCreate(name: string, details: string, calories: number) {
-      var newMeal = new Meal (name,details,calories);
+    onCreate(name: string, details: string, calories: number, date: string) {
+      var newMeal = new Meal (name,details,calories,date);
       this.onCreateSender.emit(newMeal);
     }
 }

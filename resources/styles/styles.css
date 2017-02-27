@@ -7,7 +7,12 @@ body {
   font-family: "Verdana"
 }
 
-select , h3 {
+select {
+  display: inline;
+  width: 100px;
+}
+
+h3, h4 {
   display: inline;
 }
 
@@ -22,7 +27,7 @@ select , h3 {
   padding-left: 10px;
   margin: 10px;
   width: 300px;
-  height: 100px;
+  height: 120px;
   display: inline-block;
 }
 

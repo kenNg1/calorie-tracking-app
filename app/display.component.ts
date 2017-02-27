@@ -6,16 +6,17 @@ import { FilterPipe } from './filter.pipe'
   selector: 'display-component',
   template: `
   <div class="container">
-  <h3>Click the meals to toggle save and edit mode!</h3><select (change)="onChange($event.target.value)">
+  <h4>Click meals to toggle save and edit! | Filter by calorie level: </h4><select (change)="onChange($event.target.value)">
             <option value='all'>All</option>
             <option value='high'>Only High Calories</option>
             <option value='low'>Only Low Calories</option>
-        </select><br>
+        </select><h4> (Over 500 cal is high!)</h4><br>
     <div class="meal" *ngFor="let currentMeal of childMealList | filter: childSelectedState">
       <div (click)=editClicked()>
       <h5>Name:{{ currentMeal.name }}</h5>
       <h5>Details: {{ currentMeal.details }}</h5>
-      <!---<h4>Calories: {{ currentMeal.calories }}</h4>-->
+      <h5>Date: {{ currentMeal.date }}</h5>
+      <h4>Calories: {{ currentMeal.calories }}</h4>
       </div>
     </div>
   </div>
